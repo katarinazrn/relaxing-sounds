@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/relaxing-sounds/static/css/main.c88934f4.css",
+    "main.js": "/relaxing-sounds/static/js/main.0f211b60.js",
+    "static/js/787.b0431db8.chunk.js": "/relaxing-sounds/static/js/787.b0431db8.chunk.js",
+    "static/media/sound.mp3": "/relaxing-sounds/static/media/sound.b70cff326dfac44336d1.mp3",
+    "static/media/video.mp4": "/relaxing-sounds/static/media/video.34f157be9f68b2946d4f.mp4",
+    "index.html": "/relaxing-sounds/index.html",
+    "main.c88934f4.css.map": "/relaxing-sounds/static/css/main.c88934f4.css.map",
+    "main.0f211b60.js.map": "/relaxing-sounds/static/js/main.0f211b60.js.map",
+    "787.b0431db8.chunk.js.map": "/relaxing-sounds/static/js/787.b0431db8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c88934f4.css",
+    "static/js/main.0f211b60.js"
+  ]
+}
