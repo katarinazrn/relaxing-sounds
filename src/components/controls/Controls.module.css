@@ -1,0 +1,83 @@
+.controls {
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.733);
+    z-index: 100;
+    background-color: rgba(202, 201, 218, 0.301);
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.89);
+    margin: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.button:hover {
+    color: rgb(124, 143, 248);
+}
+
+.volume {
+    display: flex;
+}
+
+.volume input {
+    cursor: pointer;
+}
+
+.controls::before {
+    content: '';
+    background-color: rgba(54, 54, 54, 0.295);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.hidden {
+    animation-name: hide;
+    animation-fill-mode: forwards;
+}
+
+.visible {
+    animation-name: show;
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes hide {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -100px;
+    }
+}
+
+@keyframes show {
+    0% {
+        bottom: -100px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
