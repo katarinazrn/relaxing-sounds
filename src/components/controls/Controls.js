@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import classes from './Controls.module.css';
 
-function Controls(props) {
+function Controls({ changeVolume, resume, pause, openFullscreen, closeFullscreen, optionsVisible }) {
 
-    const [playing, setPlaying] = useState(true);
+    const [playing, setPlaying] = useState(false);
     const [volume, setVolume] = useState(30);
     const [fullscreen, setFullscreen] = useState(false);
 
@@ -18,17 +18,17 @@ function Controls(props) {
     }, [])
 
     useEffect(() => {
-        props.changeVolume(volume);
+        changeVolume(volume);
     }, [volume]);
 
     function togglePlay() {
         setPlaying(prev => {
             let newState = !prev;
             if (newState) {
-                props.resume();
+                resume();
             }
             else {
-                props.pause();
+                pause();
             }
             return newState;
         });
@@ -48,12 +48,12 @@ function Controls(props) {
     }
 
     function toggleFullscreen() {
-        if (fullscreen) props.closeFullscreen();
-        else props.openFullscreen();
+        if (fullscreen) closeFullscreen();
+        else openFullscreen();
     }
 
     return (
-        <div className={`${classes.controls} ${props.optionsVisible ? classes.visible : classes.hidden}`}>
+        <div className={`${classes.controls} ${optionsVisible ? classes.visible : classes.hidden}`}>
             <button onClick={togglePlay} className={`${classes.button} material-icons`}>
                 {!playing && 'play_arrow'}
                 {playing && 'pause'}

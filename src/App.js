@@ -8,8 +8,8 @@ import './App.css';
 function App() {
 
   const [categories, setCategories] = useState(CATEGORIES);
-  const [current, setCurrent] = useState(CATEGORIES[1]);
-  const [playing, setPlaying] = useState(true);
+  const [current, setCurrent] = useState(CATEGORIES[0]);
+  const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(30);
   const [optionsVisible, setOptionsVisible] = useState(true);
   const [time, setTime] = useState(false);
@@ -84,10 +84,30 @@ function App() {
 
 
   return (
-    <div ref={allRef} onMouseMove={handleMousemove} onMouseLeave={hideOptions} className={optionsVisible ? 'cursorVisible ' : 'cursorHidden'}>
-      <CategoriesList optionsVisible={optionsVisible} changeCurrent={changeCurrent} current={current} categories={categories} />
-      <Video optionsVisible={optionsVisible} showOptions={showOptions} hideOptions={hideOptions} playing={playing} volume={volume} category={current} />
-      <Controls closeFullscreen={closeFullscreen} openFullscreen={openFullscreen} optionsVisible={optionsVisible} pause={pause} resume={resume} changeVolume={changeVolume} />
+    <div
+      ref={allRef}
+      onMouseMove={handleMousemove}
+      onMouseLeave={hideOptions}
+      className={optionsVisible ? 'cursorVisible ' : 'cursorHidden'}>
+      <CategoriesList
+        optionsVisible={optionsVisible}
+        changeCurrent={changeCurrent}
+        current={current}
+        categories={categories} />
+      <Video
+        optionsVisible={optionsVisible}
+        showOptions={showOptions}
+        hideOptions={hideOptions}
+        playing={playing}
+        volume={volume}
+        category={current} />
+      <Controls
+        closeFullscreen={closeFullscreen}
+        openFullscreen={openFullscreen}
+        optionsVisible={optionsVisible}
+        pause={pause}
+        resume={resume}
+        changeVolume={changeVolume} />
     </div>
   );
 }

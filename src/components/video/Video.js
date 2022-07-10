@@ -6,7 +6,6 @@ function Video({ category, playing, volume }) {
     const [video, setVideo] = useState(null);
     const [sound, setSound] = useState(null);
 
-
     const videoRef = useRef();
     const audioRef = useRef();
 
@@ -45,12 +44,12 @@ function Video({ category, playing, volume }) {
     if (!video || !sound) return <p>loading...</p>
 
     return (
-        <div className={classes.container}>
-            <video loop autoPlay={playing} ref={videoRef} className={classes.video}>
+        <div className={classes.container} >
+            <video autoPlay={playing} loop ref={videoRef} className={classes.video}>
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <audio loop autoPlay={playing} ref={audioRef} className={classes.audio}>
+            <audio autoPlay={playing} loop ref={audioRef} className={classes.audio}>
                 <source src={sound} type="audio/mp3" />
                 Your browser does not support the audio tag.
             </audio>
